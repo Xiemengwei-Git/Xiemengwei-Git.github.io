@@ -152,19 +152,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-first" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-HTTPS的部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/27/first/">first</a>
+      <a class="article-title" href="/2020/12/27/HTTPS%E7%9A%84%E9%83%A8%E7%BD%B2/">first</a>
     </h1>
   
 
         
-        <a href="/2020/12/27/first/" class="archive-article-date">
+        <a href="/2020/12/27/HTTPS%E7%9A%84%E9%83%A8%E7%BD%B2/" class="archive-article-date">
   	<time datetime="2020-12-27T14:10:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-27</time>
 </a>
         
@@ -172,7 +172,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="谢梦伟"><a href="#谢梦伟" class="headerlink" title="谢梦伟"></a>谢梦伟</h1><h2 id="firstBlog"><a href="#firstBlog" class="headerlink" title="firstBlog"></a>firstBlog</h2>
+        <h1 id="一、购买SSL证书（应用安全）"><a href="#一、购买SSL证书（应用安全）" class="headerlink" title="一、购买SSL证书（应用安全）"></a>一、购买SSL证书（应用安全）</h1><h2 id="1、登录阿里云，找到SSL证书路口"><a href="#1、登录阿里云，找到SSL证书路口" class="headerlink" title="1、登录阿里云，找到SSL证书路口"></a>1、登录阿里云，找到SSL证书路口</h2><h3 id="（1）登录阿里云，把鼠标放到阿里云logo旁的汉堡导航栏上，点击产品与服务，点击SSL证书（应用安全），如图1所示："><a href="#（1）登录阿里云，把鼠标放到阿里云logo旁的汉堡导航栏上，点击产品与服务，点击SSL证书（应用安全），如图1所示：" class="headerlink" title="（1）登录阿里云，把鼠标放到阿里云logo旁的汉堡导航栏上，点击产品与服务，点击SSL证书（应用安全），如图1所示："></a>（1）登录阿里云，把鼠标放到阿里云logo旁的汉堡导航栏上，点击产品与服务，点击SSL证书（应用安全），如图1所示：</h3><p><img src="file:///C:/Users/15389/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg" alt="img"></p>
+<p><strong>图1：SSL证书购买路口</strong></p>
+<h2 id="2、购买证书"><a href="#2、购买证书" class="headerlink" title="2、购买证书"></a>2、购买证书</h2><h3 id="（1）点击购买证书，选择证书的配置，如图2，图3所示："><a href="#（1）点击购买证书，选择证书的配置，如图2，图3所示：" class="headerlink" title="（1）点击购买证书，选择证书的配置，如图2，图3所示："></a>（1）点击购买证书，选择证书的配置，如图2，图3所示：</h3><p><img src="file:///C:/Users/15389/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg" alt="img"></p>
+<p><strong>图2：选择SSL证书的配置</strong></p>
+<p><img src="file:///C:/Users/15389/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg" alt="img"></p>
+<p><strong>图3：证书的购买</strong></p>
+<h2 id="3、申请证书"><a href="#3、申请证书" class="headerlink" title="3、申请证书"></a>3、申请证书</h2><h3 id="（1）申请证书，有两个记录值，此记录会在域名解析时自动生成，如图4所示："><a href="#（1）申请证书，有两个记录值，此记录会在域名解析时自动生成，如图4所示：" class="headerlink" title="（1）申请证书，有两个记录值，此记录会在域名解析时自动生成，如图4所示："></a>（1）申请证书，有两个记录值，此记录会在域名解析时自动生成，如图4所示：</h3><p><img src="file:///C:/Users/15389/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg" alt="img"></p>
+<p><strong>图4：申请证书</strong></p>
+<h2 id="4、重要注意"><a href="#4、重要注意" class="headerlink" title="4、重要注意"></a>4、重要注意</h2><h3 id="（1）注意：一级域名和二级域名中服务器中绑定选择不带www前缀的那个，一级域名访问时使用带www前缀的，二级域名访问时使用的是不带www前缀的。如图5所示："><a href="#（1）注意：一级域名和二级域名中服务器中绑定选择不带www前缀的那个，一级域名访问时使用带www前缀的，二级域名访问时使用的是不带www前缀的。如图5所示：" class="headerlink" title="（1）注意：一级域名和二级域名中服务器中绑定选择不带www前缀的那个，一级域名访问时使用带www前缀的，二级域名访问时使用的是不带www前缀的。如图5所示："></a>（1）注意：一级域名和二级域名中服务器中绑定选择不带www前缀的那个，一级域名访问时使用带www前缀的，二级域名访问时使用的是不带www前缀的。如图5所示：</h3><p><img src="file:///C:/Users/15389/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg" alt="img"></p>
+<p><strong>图5：注意</strong></p>
+<h2 id="5、下载证书"><a href="#5、下载证书" class="headerlink" title="5、下载证书"></a>5、下载证书</h2><h3 id="（1）下载证书，点击下载即可，如图6所示："><a href="#（1）下载证书，点击下载即可，如图6所示：" class="headerlink" title="（1）下载证书，点击下载即可，如图6所示："></a>（1）下载证书，点击下载即可，如图6所示：</h3><p><img src="file:///C:/Users/15389/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg" alt="img"></p>
+<p><strong>图6：下载证书</strong></p>
+<h1 id="二、域名解析"><a href="#二、域名解析" class="headerlink" title="二、域名解析"></a>二、域名解析</h1><h2 id="1、找到域名解析路口"><a href="#1、找到域名解析路口" class="headerlink" title="1、找到域名解析路口"></a>1、找到域名解析路口</h2><h3 id="（1）把鼠标放到阿里云logo旁的汉堡导航栏上，点击产品与服务，点击域名，-如图7所示："><a href="#（1）把鼠标放到阿里云logo旁的汉堡导航栏上，点击产品与服务，点击域名，-如图7所示：" class="headerlink" title="（1）把鼠标放到阿里云logo旁的汉堡导航栏上，点击产品与服务，点击域名， 如图7所示："></a>（1）把鼠标放到阿里云logo旁的汉堡导航栏上，点击产品与服务，点击域名， 如图7所示：</h3><p><img src="file:///C:/Users/15389/AppData/Local/Temp/msohtmlclip1/01/clip_image014.jpg" alt="img"></p>
+<p><strong>图7：域名解析路口</strong></p>
+<h2 id="2、点击域名解析"><a href="#2、点击域名解析" class="headerlink" title="2、点击域名解析"></a>2、点击域名解析</h2><h3 id="（1）找到SSL证书绑定的域名，点击解析，如图8所示："><a href="#（1）找到SSL证书绑定的域名，点击解析，如图8所示：" class="headerlink" title="（1）找到SSL证书绑定的域名，点击解析，如图8所示："></a>（1）找到SSL证书绑定的域名，点击解析，如图8所示：</h3><p><img src="file:///C:/Users/15389/AppData/Local/Temp/msohtmlclip1/01/clip_image016.jpg" alt="img"></p>
+<p><strong>图8：找到SSL证书绑定的域名，进行解析</strong></p>
+<h2 id="3、进行域名解析"><a href="#3、进行域名解析" class="headerlink" title="3、进行域名解析"></a>3、进行域名解析</h2><h3 id="（1）在解析时，有两条记录值，第一条为：在SLL证书购买的步骤3中，申请证书时，会有两个记录值，-开头比较短的是主机记录，长的是记录值，此记录会自动生成，检查是否正确即可。第二条：记录类型为A，主机记录为-www，记录值为服务器的ip地址。如图9所示："><a href="#（1）在解析时，有两条记录值，第一条为：在SLL证书购买的步骤3中，申请证书时，会有两个记录值，-开头比较短的是主机记录，长的是记录值，此记录会自动生成，检查是否正确即可。第二条：记录类型为A，主机记录为-www，记录值为服务器的ip地址。如图9所示：" class="headerlink" title="（1）在解析时，有两条记录值，第一条为：在SLL证书购买的步骤3中，申请证书时，会有两个记录值，_开头比较短的是主机记录，长的是记录值，此记录会自动生成，检查是否正确即可。第二条：记录类型为A，主机记录为 www，记录值为服务器的ip地址。如图9所示："></a>（1）在解析时，有两条记录值，第一条为：在SLL证书购买的步骤3中，申请证书时，会有两个记录值，_开头比较短的是主机记录，长的是记录值，此记录会自动生成，检查是否正确即可。第二条：记录类型为A，主机记录为 www，记录值为服务器的ip地址。如图9所示：</h3><p><img src="file:///C:/Users/15389/AppData/Local/Temp/msohtmlclip1/01/clip_image018.jpg" alt="img"></p>
+<p>**图9：修改记录<br>**</p>
+<h1 id="三、在服务器中安装证书"><a href="#三、在服务器中安装证书" class="headerlink" title="三、在服务器中安装证书"></a>三、在服务器中安装证书</h1><h2 id="1、将证书传到服务器中"><a href="#1、将证书传到服务器中" class="headerlink" title="1、将证书传到服务器中"></a>1、将证书传到服务器中</h2><h3 id="（1）在服务器中tomcat目录下创建一个cert目录，将下载的证书传输到此目录，并解压。"><a href="#（1）在服务器中tomcat目录下创建一个cert目录，将下载的证书传输到此目录，并解压。" class="headerlink" title="（1）在服务器中tomcat目录下创建一个cert目录，将下载的证书传输到此目录，并解压。"></a>（1）在服务器中tomcat目录下创建一个cert目录，将下载的证书传输到此目录，并解压。</h3><h2 id="2、安装证书"><a href="#2、安装证书" class="headerlink" title="2、安装证书"></a>2、安装证书</h2><h3 id="（1）进行证书的安装，后缀名为pfx格式的为证书，后缀名为txt格式的为密码，点击证书，输入相应的密码进行安装即可。如图10所示："><a href="#（1）进行证书的安装，后缀名为pfx格式的为证书，后缀名为txt格式的为密码，点击证书，输入相应的密码进行安装即可。如图10所示：" class="headerlink" title="（1）进行证书的安装，后缀名为pfx格式的为证书，后缀名为txt格式的为密码，点击证书，输入相应的密码进行安装即可。如图10所示："></a>（1）进行证书的安装，后缀名为pfx格式的为证书，后缀名为txt格式的为密码，点击证书，输入相应的密码进行安装即可。如图10所示：</h3><p><img src="file:///C:/Users/15389/AppData/Local/Temp/msohtmlclip1/01/clip_image020.jpg" alt="img"></p>
+<p><strong>图10：修改记录</strong></p>
+<h2 id="3、server-xml的配置"><a href="#3、server-xml的配置" class="headerlink" title="3、server.xml的配置"></a>3、server.xml的配置</h2><h3 id="（1）找到tomcat的server-xml并打开，找到SSL证书配置的属性，keystoreFile为安装证书的相对路径，注意：证书名不要www前缀。keystorePass为安装证书的密码。如图11所示："><a href="#（1）找到tomcat的server-xml并打开，找到SSL证书配置的属性，keystoreFile为安装证书的相对路径，注意：证书名不要www前缀。keystorePass为安装证书的密码。如图11所示：" class="headerlink" title="（1）找到tomcat的server.xml并打开，找到SSL证书配置的属性，keystoreFile为安装证书的相对路径，注意：证书名不要www前缀。keystorePass为安装证书的密码。如图11所示："></a>（1）找到tomcat的server.xml并打开，找到SSL证书配置的属性，keystoreFile为安装证书的相对路径，注意：证书名不要www前缀。keystorePass为安装证书的密码。如图11所示：</h3><p><img src="file:///C:/Users/15389/AppData/Local/Temp/msohtmlclip1/01/clip_image022.jpg" alt="img"></p>
+<p><strong>图11：安装证书的配置</strong></p>
+<h2 id="4、重启tomcat"><a href="#4、重启tomcat" class="headerlink" title="4、重启tomcat"></a>4、重启tomcat</h2>
       
 
       
@@ -184,7 +206,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/27/first/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/12/27/HTTPS%E7%9A%84%E9%83%A8%E7%BD%B2/">展开全文 >></a>
         </p>
       
 
