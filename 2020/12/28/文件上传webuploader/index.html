@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2020/12 | Hexo</title>
+  <title>文件上传webuploader | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2020/12/index.html">
+  <meta name="description" content="webuploader大文件分片并发上传">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件上传webuploader">
+<meta property="og:url" content="http://example.com/2020/12/28/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0webuploader/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="webuploader大文件分片并发上传">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0webuploader/1.png">
+<meta property="article:published_time" content="2020-12-28T00:44:06.000Z">
+<meta property="article:modified_time" content="2020-12-28T01:31:22.148Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="webuploader">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0webuploader/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,36 +157,107 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-文件上传webuploader" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/12/28/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0webuploader/" class="archive-article-date">
-  	<time datetime="2020-12-28T00:44:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/28/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0webuploader/">文件上传webuploader</a>
+    <h1 class="article-title" itemprop="name">
+      文件上传webuploader
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/12/28/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0webuploader/" class="archive-article-date">
+  	<time datetime="2020-12-28T00:44:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>webuploader大文件分片并发上传</p>
+<a id="more"></a>
+
+<h1 id="一、引入资源"><a href="#一、引入资源" class="headerlink" title="一、引入资源"></a>一、引入资源</h1><p>使用Web Uploader文件上传需要引入三种资源：JS, CSS<strong>。需前往官网自行下载！</strong></p>
+<p>地址：<a target="_blank" rel="noopener" href="http://fex.baidu.com/webuploader/">http://fex.baidu.com/webuploader/</a></p>
+<p><em><!--**引入**CSS--></em></p>
+<link rel="stylesheet" type="text/css" href="webuploader文件夹/webuploader.css">
+
+
+
+<p><em><!--**引入**JS--></em></p>
+<script type="text/javascript" src="webuploader文件夹/webuploader.js"></script>
+
+
+
+
+
+<p><strong>图1：引入</strong> Web Uploader资源</p>
+<h1 id="二、HTML及css部分"><a href="#二、HTML及css部分" class="headerlink" title="二、HTML及css部分"></a>二、HTML及css部分</h1><p>1、在HTML或jsp页面放置文件信息所需的容器、选择按钮、上传按钮和上传进度条四个部分 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;uploader&quot; class&#x3D;&quot;wu-example&quot;&gt;</span><br><span class="line">         &lt;!-- 用来存放文件信息 --&gt;</span><br><span class="line">       &lt;div id&#x3D;&quot;thelist&quot; class&#x3D;&quot;uploader-list&quot; style&#x3D;&quot;width: 500px;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">           &lt;div class&#x3D;&quot;btns&quot;&gt;</span><br><span class="line">               &lt;div id&#x3D;&quot;picker&quot;&gt;选择文件&lt;&#x2F;div&gt;</span><br><span class="line">           &lt;&#x2F;div&gt;</span><br><span class="line">       &lt;&#x2F;div&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;!--进度条--&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;progress&quot;&gt;</span><br><span class="line">       &lt;div id&#x3D;&quot;progress_msg&quot; class&#x3D;&quot;progress-bar progress-bar-striped active&quot;  role&#x3D;&quot;progressbar&quot; aria-valuenow&#x3D;&quot;45&quot; aria-valuemin&#x3D;&quot;0&quot; aria-valuemax&#x3D;&quot;100&quot; style&#x3D;&quot;width: 0%&quot;&gt;</span><br><span class="line">                0%</span><br><span class="line">       &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;  </span><br></pre></td></tr></table></figure>
+
+
+<h1 id="三、js部分"><a href="#三、js部分" class="headerlink" title="三、js部分"></a>三、js部分</h1><h2 id="3-1、初始化WebUploader"><a href="#3-1、初始化WebUploader" class="headerlink" title="3.1、初始化WebUploader"></a>3.1、初始化WebUploader</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line"></span><br><span class="line">	var uploader &#x3D; WebUploader.create(&#123;  </span><br><span class="line">        auto : true,   &#x2F;&#x2F; 选完文件后，是否自动上传</span><br><span class="line">        server : getRootPath()+&quot;&#x2F;webuploader&#x2F;course_upload&quot;,</span><br><span class="line">        &#x2F;&#x2F; 文件接收服务端(对应controller层方法)</span><br><span class="line">        pick : &#39;#picker&#39;,         &#x2F;&#x2F; 选择文件的按钮。可选chunked : true,         </span><br><span class="line">        &#x2F;&#x2F;开启分片上传</span><br><span class="line">        chunkSize : 5 * 1024 * 1024,&#x2F;&#x2F;5M</span><br><span class="line">        chunkRetry : 3,         &#x2F;&#x2F;错误重试次数</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="3-2、监听分块上传过程中的时间点"><a href="#3-2、监听分块上传过程中的时间点" class="headerlink" title="3.2、监听分块上传过程中的时间点"></a>3.2、监听分块上传过程中的时间点</h2><p>​    var md5File; //定义分片上传加密的文件变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;监听分块上传过程中的时间点</span><br><span class="line">	WebUploader.Uploader.register(&#123;</span><br><span class="line">		&quot;before-send-file&quot; : &quot;beforeSendFile&quot;,  &#x2F;&#x2F; 整个文件上传前</span><br><span class="line">		&quot;before-send&quot; : &quot;beforeSend&quot;,           &#x2F;&#x2F; 每个分片上传前</span><br><span class="line">		&quot;after-send-file&quot; : &quot;afterSendFile&quot;  	&#x2F;&#x2F; 分片上传完毕</span><br><span class="line">    &#125;,   &#x2F;&#x2F;未结束！接着下页代码</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="3-2-1-上传文件查重"><a href="#3-2-1-上传文件查重" class="headerlink" title="3.2.1  上传文件查重"></a>3.2.1  上传文件查重</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;时间点1：所有分块进行上传之前调用此函数 ，检查文件存不存在</span><br><span class="line">	 beforeSendFile : function(file) &#123;</span><br><span class="line">        var deferred &#x3D; WebUploader.Deferred();</span><br><span class="line">        md5File &#x3D; hex_md5(file.name + file.size);</span><br><span class="line">        &#x2F;&#x2F;根据文件名称，大小确定文件唯一标记，这种方式不赞成使用</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">        	type : &quot;POST&quot;,</span><br><span class="line">        	url : getRootPath()+&quot;&#x2F;webuploader&#x2F; heckFile&quot;,</span><br><span class="line">            &#x2F;&#x2F;检验文件是否存在（对应controller层方法）</span><br><span class="line">            data : &#123;</span><br><span class="line">            	&#x2F;&#x2F;也可不使用md5File进行唯一性检测</span><br><span class="line">            	&#x2F;&#x2F;数据库表中任何字段都可进行唯一性检测 </span><br><span class="line">            	&#x2F;&#x2F;如：path : path(课程路径) 需自行修改controller传参 </span><br><span class="line">            	md5File : md5File;  </span><br><span class="line">                name : file.name,</span><br><span class="line">             &#125;,</span><br><span class="line">                async : false,      &#x2F;&#x2F; 同步</span><br><span class="line">                dataType : &quot;json&quot;,</span><br><span class="line">                success : function(response) &#123;</span><br><span class="line">                if (response) &#123;                           </span><br><span class="line">                    &#x2F;&#x2F;文件存在，跳过 ，提示文件存在                            </span><br><span class="line">                    $(&#39;#&#39; + file.id).find(&#39;p.state&#39;).text(&quot;无需上传,文件已存在&quot;);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                	deferred.resolve(); &#x2F;&#x2F;文件不存在或不完整，发送该文件</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            &#125;, function(jqXHR, textStatus, errorThrown) &#123; </span><br><span class="line">            	&#x2F;&#x2F;任何形式的验证失败，都触发重新上传</span><br><span class="line">            	deferred.resolve();</span><br><span class="line">            &#125;);</span><br><span class="line">            	return deferred.promise();</span><br><span class="line">            &#125;,    &#x2F;&#x2F;未结束！接着下页代码</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-2-判断分片是否存在"><a href="#3-2-2-判断分片是否存在" class="headerlink" title="3.2.2 判断分片是否存在"></a>3.2.2 判断分片是否存在</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;时间点2：如果有分块上传，则每个分块上传之前调用此函数  ，判断分块存不存在</span><br><span class="line">        beforeSend : function(block) &#123;</span><br><span class="line">            var deferred &#x3D; WebUploader.Deferred();</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                type : &quot;POST&quot;,</span><br><span class="line">                url : getRootPath()+&quot;&#x2F;webuploader&#x2F;checkChunk&quot;,</span><br><span class="line">                  &#x2F;&#x2F;判断分块是否存在（对应controller层方法）</span><br><span class="line">                data : &#123;</span><br><span class="line">                    md5File : md5File,             &#x2F;&#x2F;文件唯一标记</span><br><span class="line">                    chunk : block.chunk,        &#x2F;&#x2F;当前分块下标</span><br><span class="line">                &#125;,</span><br><span class="line">                dataType : &quot;json&quot;,</span><br><span class="line">                success : function(response) &#123;</span><br><span class="line">                    if (response) &#123;</span><br><span class="line">                        deferred.reject();         &#x2F;&#x2F;分片存在，跳过</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        deferred.resolve(); </span><br><span class="line">                         &#x2F;&#x2F;分块不存在或不完整，重新发送该分块内容</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;, function(jqXHR, textStatus, errorThrown) &#123;</span><br><span class="line">                   &#x2F;&#x2F;任何形式的验证失败，都触发重新上传</span><br><span class="line">                deferred.resolve();</span><br><span class="line">            &#125;);</span><br><span class="line">            return deferred.promise();</span><br><span class="line">        &#125;,    &#x2F;&#x2F;未结束，接着下页代码</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="3-2-3-合成分片"><a href="#3-2-3-合成分片" class="headerlink" title="3.2.3 合成分片"></a>3.2.3 合成分片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;时间点3：分片上传完成后，通知后台合成分片</span><br><span class="line">        afterSendFile : function(file) &#123;</span><br><span class="line">            var chunksTotal &#x3D; Math.ceil(file.size &#x2F; (5 * 1024 * 1024));</span><br><span class="line">            if (chunksTotal &gt;&#x3D; 1) &#123;</span><br><span class="line">                &#x2F;&#x2F;合并请求</span><br><span class="line">                var deferred &#x3D; WebUploader.Deferred();</span><br><span class="line">                $(&#39;#&#39; + file.id).find(&#39;p.state&#39;).text(&#39;资源同步中,请稍后...&#39;);</span><br><span class="line">                console.log(&quot;请稍后,资源同步中,请稍后...&quot;);</span><br><span class="line">                $(&quot;.active&quot;).css(&quot;width&quot;,99.99+&quot;%&quot;);</span><br><span class="line">                $(&quot;#progress_msg&quot;).text(99.99+&quot;%&quot;);</span><br><span class="line">                $.ajax(&#123;</span><br><span class="line">                    type : &quot;POST&quot;,</span><br><span class="line">                    url : getRootPath()+&quot;&#x2F;webuploader&#x2F;merge&quot;,</span><br><span class="line">		&#x2F;&#x2F;合并分片（对应controller层方法）</span><br><span class="line">                    data : &#123;</span><br><span class="line">                        name : file.name,</span><br><span class="line">                        md5File : md5File,</span><br><span class="line">                        chunks : chunksTotal,</span><br><span class="line">			&#x2F;&#x2F;此处示例传递直播房间号进行传参 可换成任意想传递的值</span><br><span class="line">                        roomId : roomID,</span><br><span class="line">                        wallpaper : downloadImg</span><br><span class="line">                    &#125;,</span><br><span class="line">                    cache : false,</span><br><span class="line">                    async : true, 	&#x2F;&#x2F; 异步 否则会卡住</span><br><span class="line">                    dataType : &quot;json&quot;,</span><br><span class="line">                    success : function(response) &#123;</span><br><span class="line">                        if (response) &#123;</span><br><span class="line">                            console.log(&quot;同步完成&quot;);</span><br><span class="line">                            $(&#39;#&#39; + file.id).find(&#39;p.state&#39;).text(</span><br><span class="line">                                &#39;上传完成&#39;);</span><br><span class="line">                            $(&#39;#&#39; + file.id).find(&#39;.progress&#39;)</span><br><span class="line">                                .fadeOut();</span><br><span class="line">                            $(&quot;.active&quot;).css(&quot;width&quot;,100+&quot;%&quot;);</span><br><span class="line">                            $(&quot;#progress_msg&quot;).text(100+&quot;%&quot;);</span><br><span class="line">                        &#125; else &#123;</span><br><span class="line">                            console.log(&quot;同步失败&quot;);</span><br><span class="line">                            $(&#39;#&#39; + file.id).find(&#39;p.state&#39;).text(</span><br><span class="line">                                &#39;上传失败&#39;);</span><br><span class="line">                            deferred.reject();</span><br><span class="line">                            $(&quot;.active&quot;).css(&quot;width&quot;,0+&quot;%&quot;);</span><br><span class="line">                            $(&quot;#progress_msg&quot;).text(0+&quot;%&quot;);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">                return deferred.promise();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);	&#x2F;&#x2F;分片代码结束</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-4-webuploader监听事件"><a href="#3-2-4-webuploader监听事件" class="headerlink" title="3.2.4 webuploader监听事件"></a>3.2.4 webuploader监听事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;上传添加参数</span><br><span class="line">    uploader.on(&#39;uploadBeforeSend&#39;, function(obj, data, headers) &#123;</span><br><span class="line">        data.md5File &#x3D; md5File;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 当有文件被添加进队列的时候</span><br><span class="line">    uploader.on(&#39;fileQueued&#39;, function(file) &#123;</span><br><span class="line">        $(&quot;#picker&quot;).hide();&#x2F;&#x2F;隐藏上传框</span><br><span class="line">        $(&quot;#thelist&quot;).append(</span><br><span class="line">            &#39;&lt;div id&#x3D;&quot;&#39; + file.id + &#39;&quot; class&#x3D;&quot;item&quot;&gt;&#39;</span><br><span class="line">            + &#39;&lt;h4 class&#x3D;&quot;info&quot;&gt;&#39; + file.name + &#39;&lt;&#x2F;h4&gt;&#39;</span><br><span class="line">            + &#39;&lt;p class&#x3D;&quot;state&quot;&gt;&lt;&#x2F;p&gt;&#39; + &#39;&lt;&#x2F;div&gt;&#39;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 文件上传过程中创建进度条实时显示。</span><br><span class="line">    uploader.on(&#39;uploadProgress&#39;, function(file, percentage) &#123;</span><br><span class="line">        var temp &#x3D; (percentage * 100).toFixed(2);</span><br><span class="line">        $(&#39;#&#39; + file.id).find(&#39;p.state&#39;).text(&#39;上传中请稍后...&#39;);</span><br><span class="line">        console.log(&quot;进度条:&quot;, (percentage * 100).toFixed(2) + &#39;%&#39;);</span><br><span class="line">        $(&quot;.active&quot;).css(&quot;width&quot;,temp+&quot;%&quot;);</span><br><span class="line">        $(&quot;#progress_msg&quot;).text(temp+&quot;%&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&lt;script&gt;   </span><br></pre></td></tr></table></figure>
+<h1 id="四、js三个时间点的分片所对应的controller方法"><a href="#四、js三个时间点的分片所对应的controller方法" class="headerlink" title="四、js三个时间点的分片所对应的controller方法"></a>四、js三个时间点的分片所对应的controller方法</h1><h2 id="4-1-所需成员变量"><a href="#4-1-所需成员变量" class="headerlink" title="4.1 所需成员变量"></a>4.1 所需成员变量</h2><p>​    bll为上传对象的service层可修改</p>
+<p>​    如：上传课程视频 对应 video表的service层 videoBll及打印日志所需对象</p>
+<p><img src="/images/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0webuploader/1.png" alt="变量"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Resource(name &#x3D; &quot;bEnclosure&quot;)</span><br><span class="line">    private IEnclosure bll;</span><br><span class="line"></span><br><span class="line">    private String logType &#x3D; &quot;[webuploader]--&gt;&quot;;</span><br><span class="line"></span><br><span class="line">    private static Logger logger&#x3D; LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);  </span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="4-2-时间点1：检查文件存在与否"><a href="#4-2-时间点1：检查文件存在与否" class="headerlink" title="4.2 时间点1：检查文件存在与否"></a>4.2 时间点1：检查文件存在与否</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">     * @author van 检查文件存在与否</span><br><span class="line">     *&#x2F;</span><br><span class="line">    @PostMapping(&quot;checkFile&quot;)</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public Boolean checkFile(@RequestParam(value &#x3D; &quot;md5File&quot;) String md5File) &#123;</span><br><span class="line">        System.out.println(&quot;文件md5:&quot; + md5File);</span><br><span class="line">        Map&lt;String,Object&gt; map &#x3D; new HashMap();</span><br><span class="line">        map.put(&quot;file_md5&quot;,md5File);</span><br><span class="line">        Enclosure en &#x3D; bll.findByFileMd5(map);</span><br><span class="line">        if (en!&#x3D;null)&#123;&#x2F;&#x2F;说明文件已经存在</span><br><span class="line">            System.out.println(&quot;文件已存在&quot;);</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-3-时间点2：检查分片存在与否"><a href="#4-3-时间点2：检查分片存在与否" class="headerlink" title="4.3 时间点2：检查分片存在与否"></a>4.3 时间点2：检查分片存在与否</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">     * @author van 检查分片存在与否</span><br><span class="line">     *&#x2F;</span><br><span class="line">    @PostMapping(&quot;checkChunk&quot;)</span><br><span class="line">    @ResponseBody</span><br><span class="line">public Boolean checkChunk(@RequestParam(value &#x3D; &quot;md5File&quot;) String md5File,@RequestParam(value &#x3D; &quot;chunk&quot;) Integer chunk, HttpServletRequest request) &#123;</span><br><span class="line">        Boolean exist &#x3D; false;</span><br><span class="line">        &#x2F;&#x2F;String url &#x3D;request.getSession().getServletContext().getRealPath(&quot;&#x2F;&quot;).substring(0,2)+&quot;&#x2F;yf_updata_file&#x2F;&quot;;</span><br><span class="line">&#x2F;&#x2F;上传视频所在的路径（可修改）</span><br><span class="line">        String url &#x3D; request.getSession().getServletContext().getRealPath(&quot;&#x2F;upload&#x2F;video&#x2F;&quot;);</span><br><span class="line"></span><br><span class="line">        String path &#x3D; url + md5File + &quot;&#x2F;&quot;;&#x2F;&#x2F; 分片存放目录</span><br><span class="line">        String chunkName &#x3D; chunk + &quot;.tmp&quot;;&#x2F;&#x2F; 分片名</span><br><span class="line">        File file &#x3D; new File(path + chunkName);</span><br><span class="line">        if (file.exists()) &#123;</span><br><span class="line">            exist &#x3D; true;</span><br><span class="line">        &#125;</span><br><span class="line">        return exist;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h2 id="4-4-时间点2：合成分片"><a href="#4-4-时间点2：合成分片" class="headerlink" title="4.4 时间点2：合成分片"></a>4.4 时间点2：合成分片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">     * @author van (课程视频)合成分片</span><br><span class="line">     *&#x2F;</span><br><span class="line">    @PostMapping(&quot;course_merge&quot;)</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public Boolean course_merge(@RequestParam(value &#x3D; &quot;chunks&quot;, required &#x3D; false) Integer chunks,</span><br><span class="line">                         @RequestParam(value &#x3D; &quot;md5File&quot;) String md5File,</span><br><span class="line">                         @RequestParam(value &#x3D; &quot;name&quot;) String name,</span><br><span class="line">                         @RequestParam(value &#x3D; &quot;videoId&quot;) String videoId,HttpServletRequest request)</span><br><span class="line">            throws Exception &#123;</span><br><span class="line">	&#x2F;&#x2F;上传视频所在的路径（可修改）</span><br><span class="line">        String path &#x3D; request.getSession().getServletContext().getRealPath(&quot;&#x2F;upload&#x2F;video&#x2F;&quot;);</span><br><span class="line">        FileOutputStream fileOutputStream &#x3D; new FileOutputStream(path + name); 	&#x2F;&#x2F; 合成后的文件</span><br><span class="line">        try &#123;</span><br><span class="line">            byte[] buf &#x3D; new byte[1024 * 5];</span><br><span class="line">            for (long i &#x3D; 0; i &lt; chunks; i++) &#123;</span><br><span class="line">                String chunkFile &#x3D; i + &quot;.tmp&quot;;</span><br><span class="line">                File file &#x3D; new File(path + &quot;&#x2F;&quot; + md5File + &quot;&#x2F;&quot; + chunkFile);</span><br><span class="line">                InputStream inputStream &#x3D; new FileInputStream(file);</span><br><span class="line">                int len &#x3D; 0;</span><br><span class="line">                while ((len &#x3D; inputStream.read(buf)) !&#x3D; -1) &#123;</span><br><span class="line">                    fileOutputStream.write(buf, 0, len);</span><br><span class="line">                    fileOutputStream.flush();</span><br><span class="line">                &#125;</span><br><span class="line">                inputStream.close();</span><br><span class="line">            &#125;</span><br><span class="line">            &#x2F;&#x2F; 合并完，要删除md5目录及临时文件，节省空间。这里代码省略</span><br><span class="line">            System.out.println(&quot;文件夹删除:&quot; + path + &quot;&#x2F;&quot; + md5File);</span><br><span class="line">            deleteDir(new File(path + md5File));</span><br><span class="line">		&#x2F;&#x2F;示例为修改课程视频下的路径 所以在这传递了视频id和视频路径进行edit（修改）可修改</span><br><span class="line">            Video video&#x3D;new Video();</span><br><span class="line">            video.setId(videoId);</span><br><span class="line">            video.setPath(&quot;upload&#x2F;image&#x2F;&quot;+name);</span><br><span class="line">            videoBll.edit(video);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            logger.error(logType+&quot;文件合并,添加至数据库失败&quot;+e.getMessage(),e);</span><br><span class="line">            return false;</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            fileOutputStream.close();</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="4-5文件传输"><a href="#4-5文件传输" class="headerlink" title="4.5文件传输"></a>4.5文件传输</h2><p><strong>这里根据文件**</strong>md5**<strong>值生成目录，并将分片文件放到该目录下</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">         * @author van 上传，这里根据文件md5值生成目录，并将分片文件放到该目录下</span><br><span class="line">         *&#x2F;</span><br><span class="line">        @PostMapping(&quot;upload&quot;)</span><br><span class="line">        @ResponseBody</span><br><span class="line">        public Boolean upload(@RequestParam(value &#x3D; &quot;file&quot;) MultipartFile file,</span><br><span class="line">                @RequestParam(value &#x3D; &quot;md5File&quot;) String md5File,</span><br><span class="line">                @RequestParam(value &#x3D; &quot;chunk&quot;, required &#x3D; false) Integer chunk, HttpServletRequest request) &#123; &#x2F;&#x2F; 第几片，从0开始</span><br><span class="line">            &#x2F;&#x2F;String url &#x3D;request.getSession().getServletContext().getRealPath(&quot;&#x2F;&quot;).substring(0,2)+&quot;&#x2F;yf_updata_file&#x2F;&quot;;</span><br><span class="line">		&#x2F;&#x2F;上传视频所在的路径（可修改）</span><br><span class="line">            String url &#x3D; request.getSession().getServletContext().getRealPath(&quot;&#x2F;upload&#x2F;video&#x2F;&quot;);</span><br><span class="line">            String path &#x3D; url + md5File + &quot;&#x2F;&quot;;&#x2F;&#x2F; 分片存放目录</span><br><span class="line">            File dirfile &#x3D; new File(path);</span><br><span class="line">            if (!dirfile.exists()) &#123;&#x2F;&#x2F; 目录不存在，创建目录</span><br><span class="line">                dirfile.mkdirs();</span><br><span class="line">            &#125;</span><br><span class="line">            String chunkName;</span><br><span class="line">            if (chunk &#x3D;&#x3D; null) &#123;&#x2F;&#x2F; 表示是小文件，还没有一片</span><br><span class="line">                chunkName &#x3D; &quot;0.tmp&quot;;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                chunkName &#x3D; chunk + &quot;.tmp&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">            String filePath &#x3D; path + chunkName;</span><br><span class="line">            File savefile &#x3D; new File(filePath);</span><br><span class="line">            try &#123;</span><br><span class="line">                if (!savefile.exists()) &#123;</span><br><span class="line">                    savefile.createNewFile();&#x2F;&#x2F; 文件不存在，则创建</span><br><span class="line">                &#125;</span><br><span class="line">                file.transferTo(savefile);&#x2F;&#x2F; 将文件保存</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            return true;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-6递归删除目录下的所有文件及子目录下所有文件"><a href="#4-6递归删除目录下的所有文件及子目录下所有文件" class="headerlink" title="4.6递归删除目录下的所有文件及子目录下所有文件"></a>4.6递归删除目录下的所有文件及子目录下所有文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">private boolean deleteDir(File dir) &#123;</span><br><span class="line">       if (dir.isDirectory()) &#123;</span><br><span class="line">           String[] children &#x3D; dir.list();</span><br><span class="line">           &#x2F;&#x2F;递归删除目录中的子目录下</span><br><span class="line">           for (int i &#x3D; 0; i &lt; children.length; i++) &#123;</span><br><span class="line">               boolean success &#x3D; deleteDir(new File(dir, children[i]));</span><br><span class="line">               if (!success) &#123;</span><br><span class="line">                   return false;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       &#x2F;&#x2F; 目录此时为空，可以删除</span><br><span class="line">       return dir.delete();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,57 +269,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/28/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0webuploader/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/12/27/HTTPS%E7%9A%84%E9%83%A8%E7%BD%B2/" class="archive-article-date">
-  	<time datetime="2020-12-27T14:10:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/12/27/HTTPS%E7%9A%84%E9%83%A8%E7%BD%B2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTTPS的部署</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/27/HTTPS%E7%9A%84%E9%83%A8%E7%BD%B2/">HTTPS的部署</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTTPS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -264,8 +391,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
