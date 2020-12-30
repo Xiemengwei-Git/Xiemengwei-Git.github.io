@@ -15,17 +15,17 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="腾讯云点播的部署">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="e:/myBlog/source/images/腾讯云点播部署/1.png">
-<meta property="og:image" content="e:/myBlog/source/images/腾讯云点播部署/2.png">
-<meta property="og:image" content="e:/myBlog/source/images/腾讯云点播部署/3.png">
-<meta property="og:image" content="e:/myBlog/source/images/腾讯云点播部署/4.png">
-<meta property="og:image" content="e:/myBlog/source/images/腾讯云点播部署/5.png">
-<meta property="og:image" content="e:/myBlog/source/images/腾讯云点播部署/6.png">
+<meta property="og:image" content="http://example.com/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/1.png">
+<meta property="og:image" content="http://example.com/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/2.png">
+<meta property="og:image" content="http://example.com/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/3.png">
+<meta property="og:image" content="http://example.com/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/4.png">
+<meta property="og:image" content="http://example.com/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/5.png">
+<meta property="og:image" content="http://example.com/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/6.png">
 <meta property="article:published_time" content="2020-12-29T01:15:29.000Z">
-<meta property="article:modified_time" content="2020-12-30T03:03:26.349Z">
+<meta property="article:modified_time" content="2020-12-30T03:09:35.555Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="e:/myBlog/source/images/腾讯云点播部署/1.png">
+<meta name="twitter:image" content="http://example.com/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -185,13 +185,13 @@
 <a id="more"></a>
 
 <h1 id="一、Maven-依赖引入"><a href="#一、Maven-依赖引入" class="headerlink" title="一、Maven 依赖引入"></a>一、Maven 依赖引入</h1><h2 id="1、-在项目的-pom-xml-文件添加点播-SDK-依赖即可"><a href="#1、-在项目的-pom-xml-文件添加点播-SDK-依赖即可" class="headerlink" title="1、   在项目的 pom.xml 文件添加点播 SDK 依赖即可"></a>1、   在项目的 pom.xml 文件添加点播 SDK 依赖即可</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt; </span><br><span class="line"></span><br><span class="line">  &lt;groupId&gt;com.qcloud&lt;&#x2F;groupId&gt;</span><br><span class="line"></span><br><span class="line">  &lt;artifactId&gt;vod_api&lt;&#x2F;artifactId&gt;</span><br><span class="line"></span><br><span class="line">  &lt;version&gt;2.1.4&lt;&#x2F;version&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="E:\myBlog\source\images\腾讯云点播部署\1.png"></p>
+<p><img src="/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/1.png" alt="alt"></p>
 <p>​                                                                                                <strong>图1：添加点播SDK依赖</strong></p>
 <h1 id="二、前端准备工作"><a href="#二、前端准备工作" class="headerlink" title="二、前端准备工作"></a>二、前端准备工作</h1><h2 id="（1）ajax发送点播请求，如图2所示："><a href="#（1）ajax发送点播请求，如图2所示：" class="headerlink" title="（1）ajax发送点播请求，如图2所示："></a>（1）ajax发送点播请求，如图2所示：</h2><p> <font color="red">  注意：视频路径需是本地路径！</font></p>
-<p><img src="E:\myBlog\source\images\腾讯云点播部署\2.png" alt="img"></p>
+<p><img src="/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/2.png" alt="alt"></p>
 <p>**                                                                                                图2：ajax发送点播请求**</p>
 <h1 id="三、服务器端上传实现"><a href="#三、服务器端上传实现" class="headerlink" title="三、服务器端上传实现"></a>三、服务器端上传实现</h1><h2 id="（1）使用云-API-密钥初始化-VodUploadClient-实例。"><a href="#（1）使用云-API-密钥初始化-VodUploadClient-实例。" class="headerlink" title="（1）使用云 API 密钥初始化 VodUploadClient 实例。"></a>（1）使用云 API 密钥初始化 VodUploadClient 实例。</h2><p><font color="red">注意：secretId、secretKey请在腾讯云账户信息里获取</font></p>
-<p><img src="E:\myBlog\source\images\腾讯云点播部署\3.png" alt="img"></p>
+<p><img src="/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/3.png" alt="alt"></p>
 <p>​                                                                                                            图3：云API秘钥初始化上传实例**</p>
 <p><font color="red">VodUploadClient client = new VodUploadClient(secretId, secretKey);</font ></p>
 <h2 id="（2）构造上传请求对象"><a href="#（2）构造上传请求对象" class="headerlink" title="（2）构造上传请求对象"></a>（2）构造上传请求对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VodUploadRequest request &#x3D; new VodUploadRequest();</span><br><span class="line">request.setMediaFilePath(&quot;&#x2F;data&#x2F;videos&#x2F;Wildlife.wmv&quot;); &#x2F;&#x2F;参数为视频路径</span><br></pre></td></tr></table></figure>
@@ -199,7 +199,8 @@
 
 <h2 id="（3）调用上传"><a href="#（3）调用上传" class="headerlink" title="（3）调用上传"></a>（3）调用上传</h2><p><font color="red">调用上传方法，传入接入点地域及上传请求。</p>
 <p>注意：接入点地域需前往云点播控制台查看</font></p>
-<p><img src="E:\myBlog\source\images\腾讯云点播部署\4.png" alt="img"><img src="E:\myBlog\source\images\腾讯云点播部署\5.png" alt="img"></p>
+<p><img src="/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/4.png" alt="alt"></p>
+<p><img src="/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/5.png" alt="alt"></p>
 <p><font color="red">可选取已开启的作为接入地域，下图代码填写的是重庆的接入点地域</p>
 <p>client.upload（”ap-chongqing”）;</font></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try &#123;</span><br><span class="line">        VodUploadResponse response &#x3D; client.upload(&quot;ap-chongqing&quot;, request);</span><br><span class="line">        logger.info(&quot;Upload FileId &#x3D; &#123;&#125;&quot;, response.getFileId());</span><br><span class="line">&#125; catch (Exception e) &#123;</span><br><span class="line">        &#x2F;&#x2F; 业务方进行异常处理</span><br><span class="line">        logger.error(&quot;Upload Err&quot;, e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -208,7 +209,7 @@
 
 
 <h2 id="（4）自适应码流设置"><a href="#（4）自适应码流设置" class="headerlink" title="（4）自适应码流设置"></a>（4）自适应码流设置</h2><p><font color="red">注意：自适应码流不设置将直接影响播放</font></p>
-<p><img src="E:\myBlog\source\images\腾讯云点播部署\6.png" alt="img"></p>
+<p><img src="/images/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD%E9%83%A8%E7%BD%B2/6.png" alt="alt"></p>
 <p>**                                                                                    图4：自适应码流 视频处理接口调用**</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"> &#x2F;&#x2F;视频自适应码流</span><br><span class="line"> try&#123;</span><br><span class="line">        &#x2F;&#x2F;秘钥信息对象</span><br><span class="line">        Credential cred &#x3D; new Credential(SecretId, SecretKey);</span><br><span class="line">        &#x2F;&#x2F;接口域名对象</span><br><span class="line">        HttpProfile httpProfile &#x3D; new HttpProfile();</span><br><span class="line">        httpProfile.setEndpoint(&quot;vod.tencentcloudapi.com&quot;);</span><br><span class="line"> </span><br><span class="line">        ClientProfile clientProfile &#x3D; new ClientProfile();</span><br><span class="line">        clientProfile.setHttpProfile(httpProfile);</span><br><span class="line"> </span><br><span class="line">        VodClient vodClient &#x3D; new VodClient(cred, &quot;&quot;, clientProfile);</span><br><span class="line">        &#x2F;&#x2F;视频处理请求对象</span><br><span class="line">        ProcessMediaRequest req &#x3D; new ProcessMediaRequest();</span><br><span class="line">        &#x2F;&#x2F;设置自适应码流模板id</span><br><span class="line">        MediaProcessTaskInput mediaProcessTaskInput1 &#x3D; new MediaProcessTaskInput();</span><br><span class="line"> </span><br><span class="line">        AdaptiveDynamicStreamingTaskInput[] adaptiveDynamicStreamingTaskInputs1 &#x3D; new AdaptiveDynamicStreamingTaskInput[2];</span><br><span class="line">        AdaptiveDynamicStreamingTaskInputadaptiveDynamicStreamingTaskInput1 &#x3D; new AdaptiveDynamicStreamingTaskInput();</span><br><span class="line">                adaptiveDynamicStreamingTaskInput1.setDefinition(12L);</span><br><span class="line">                adaptiveDynamicStreamingTaskInputs1[0] &#x3D; adaptiveDynamicStreamingTaskInput1;</span><br><span class="line"> </span><br><span class="line">                AdaptiveDynamicStreamingTaskInput adaptiveDynamicStreamingTaskInput2 &#x3D; new AdaptiveDynamicStreamingTaskInput();</span><br><span class="line">                adaptiveDynamicStreamingTaskInput2.setDefinition(10L);</span><br><span class="line">                adaptiveDynamicStreamingTaskInputs1[1] &#x3D; adaptiveDynamicStreamingTaskInput2;</span><br><span class="line"> </span><br><span class="line">                mediaProcessTaskInput1.setAdaptiveDynamicStreamingTaskSet(adaptiveDynamicStreamingTaskInputs1);</span><br><span class="line"> </span><br><span class="line">        req.setMediaProcessTask(mediaProcessTaskInput1);</span><br><span class="line">        &#x2F;&#x2F;设置文件id</span><br><span class="line">        req.setFileId(response.getFileId());</span><br><span class="line">        &#x2F;&#x2F;响应设置好的自适应模板id</span><br><span class="line">        ProcessMediaResponse resp &#x3D; vodClient.ProcessMedia(req);</span><br><span class="line"> </span><br><span class="line">        System.out.println(ProcessMediaResponse.toJsonString(resp));</span><br><span class="line">&#125; catch (TencentCloudSDKException e) &#123;</span><br><span class="line">         System.out.println(e.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
